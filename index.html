@@ -42,7 +42,7 @@
                 <button class="carousel-nav next" onclick="moveCarousel(1)">›</button>
 
                 <div class="gallery-grid" id="eventsCarousel">
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
                         <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&q=80" alt="Leadership Summit">
                         <div class="gallery-overlay">
                             <h3>Global Leadership Summit 2024</h3>
@@ -50,7 +50,7 @@
                         </div>
                     </div>
 
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
                         <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80" alt="Tech Expo">
                         <div class="gallery-overlay">
                             <h3>Tech Innovation Expo</h3>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
 
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
                         <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" alt="Product Launch">
                         <div class="gallery-overlay">
                             <h3>Product Launch Gala</h3>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
 
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
                         <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Executive Retreat">
                         <div class="gallery-overlay">
                             <h3>Executive Leadership Retreat</h3>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
 
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
                         <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt="Trade Show">
                         <div class="gallery-overlay">
                             <h3>International Trade Exhibition</h3>
@@ -82,7 +82,7 @@
                         </div>
                     </div>
 
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
                         <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Awards">
                         <div class="gallery-overlay">
                             <h3>Excellence Awards Ceremony</h3>
@@ -90,7 +90,7 @@
                         </div>
                     </div>
 
-                    <div class="gallery-item">
+                    <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
                         <img src="https://images.unsplash.com/photo-1519167758481-83f29da8c2b0?w=800&q=80" alt="Networking">
                         <div class="gallery-overlay">
                             <h3>Business Networking Symposium</h3>
@@ -227,6 +227,14 @@
             </div>
             </div>
         </section>
+    </div>
+
+    <!-- Full-height popup modal for embedded webpage -->
+    <div id="eventPopup" class="event-popup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeEventPopup()">✕</button>
+            <iframe id="popupIframe" class="popup-iframe" frameborder="0"></iframe>
+        </div>
     </div>
 
     <script src="script.js"></script>

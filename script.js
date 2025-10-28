@@ -128,22 +128,60 @@ function handleSwipe() {
     }
 }
 
-// Mobile: Click/Tap to show overlay on gallery items
+// Event Popup Functionality
+const eventPopup = document.getElementById("eventPopup");
+const popupIframe = document.getElementById("popupIframe");
 const galleryItems = document.querySelectorAll(".gallery-item");
 
+function openEventPopup(url) {
+    popupIframe.src = url;
+    eventPopup.classList.add("active");
+    document.body.style.overflow = "hidden"; // Prevent background scroll
+}
+
+function closeEventPopup() {
+    eventPopup.classList.remove("active");
+    popupIframe.src = ""; // Clear iframe
+    document.body.style.overflow = ""; // Restore scroll
+}
+
+// Close popup when clicking outside the content
+eventPopup.addEventListener("click", function(e) {
+    if (e.target === eventPopup) {
+        closeEventPopup();
+    }
+});
+
+// Close popup with Escape key
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && eventPopup.classList.contains("active")) {
+        closeEventPopup();
+    }
+});
+
+// Gallery items click handler
 galleryItems.forEach(item => {
     item.addEventListener("click", function(e) {
-        // Only on mobile (no hover support)
+        const url = this.getAttribute("data-url");
+
+        // On mobile: Show overlay first, then open popup on second click
         if (window.innerWidth <= 768) {
-            // Toggle active class
             const isActive = this.classList.contains("active");
 
-            // Remove active from all items
-            galleryItems.forEach(i => i.classList.remove("active"));
-
-            // Add active to clicked item (unless it was already active)
             if (!isActive) {
+                // First click: Show overlay
+                galleryItems.forEach(i => i.classList.remove("active"));
                 this.classList.add("active");
+            } else {
+                // Second click: Open popup
+                if (url) {
+                    openEventPopup(url);
+                }
+            }
+        } else {
+            // Desktop: Open popup directly
+            if (url) {
+                openEventPopup(url);
             }
         }
     });
@@ -152,7 +190,7 @@ galleryItems.forEach(item => {
 // Close overlay when clicking outside
 document.addEventListener("click", function(e) {
     if (window.innerWidth <= 768) {
-        if (!e.target.closest(".gallery-item")) {
+        if (!e.target.closest(".gallery-item") && !e.target.closest(".event-popup")) {
             galleryItems.forEach(i => i.classList.remove("active"));
         }
     }
@@ -179,5 +217,41 @@ subsidiaryBtns.forEach((btn, index) => {
     btn.style.transition = `all 0.5s ease ${index * 0.05}s`;
     subsidiaryObserver.observe(btn);
 });
+
+// Business Groups Carousel - Touch/Swipe Support on Mobile
+const subsidiariesCarousel = document.querySelector(".subsidiaries-carousel");
+let subsidiariesTouchStartX = 0;
+let subsidiariesTouchEndX = 0;
+let subsidiariesScrollLeft = 0;
+
+if (subsidiariesCarousel) {
+    subsidiariesCarousel.addEventListener("touchstart", (e) => {
+        subsidiariesTouchStartX = e.touches[0].clientX;
+        subsidiariesScrollLeft = subsidiariesCarousel.scrollLeft || 0;
+    }, { passive: true });
+
+    subsidiariesCarousel.addEventListener("touchmove", (e) => {
+        if (window.innerWidth <= 768) {
+            subsidiariesTouchEndX = e.touches[0].clientX;
+            const diff = subsidiariesTouchStartX - subsidiariesTouchEndX;
+
+            // Manual scroll on touch
+            const container = subsidiariesCarousel.parentElement;
+            if (container) {
+                container.scrollLeft = subsidiariesScrollLeft + diff;
+            }
+        }
+    }, { passive: true });
+
+    // Make container scrollable on mobile
+    if (window.innerWidth <= 768) {
+        const container = subsidiariesCarousel.parentElement;
+        if (container) {
+            container.style.overflowX = "auto";
+            container.style.scrollBehavior = "smooth";
+            container.style.webkitOverflowScrolling = "touch";
+        }
+    }
+}
 
 console.log("AZAQ & Brothers - Modern Carousel Loaded");
