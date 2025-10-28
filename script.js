@@ -218,40 +218,54 @@ subsidiaryBtns.forEach((btn, index) => {
     subsidiaryObserver.observe(btn);
 });
 
-// Business Groups Carousel - Touch/Swipe Support on Mobile
+// Business Groups Carousel - Manual Controls
 const subsidiariesCarousel = document.querySelector(".subsidiaries-carousel");
+let subsidiariesCurrentIndex = 0;
+
+function moveSubsidiaries(direction) {
+    if (!subsidiariesCarousel) return;
+
+    const items = subsidiariesCarousel.querySelectorAll(".subsidiary-btn");
+    const itemWidth = items[0].offsetWidth + 24; // width + gap
+    const containerWidth = subsidiariesCarousel.parentElement.offsetWidth;
+    const itemsPerView = Math.floor(containerWidth / itemWidth);
+    const maxIndex = Math.max(0, items.length - itemsPerView);
+
+    subsidiariesCurrentIndex += direction;
+
+    // Loop around
+    if (subsidiariesCurrentIndex < 0) {
+        subsidiariesCurrentIndex = maxIndex;
+    } else if (subsidiariesCurrentIndex > maxIndex) {
+        subsidiariesCurrentIndex = 0;
+    }
+
+    const offset = -(subsidiariesCurrentIndex * itemWidth);
+    subsidiariesCarousel.style.transform = `translateX(${offset}px)`;
+}
+
+// Touch/Swipe Support for Business Groups
 let subsidiariesTouchStartX = 0;
 let subsidiariesTouchEndX = 0;
-let subsidiariesScrollLeft = 0;
 
 if (subsidiariesCarousel) {
     subsidiariesCarousel.addEventListener("touchstart", (e) => {
         subsidiariesTouchStartX = e.touches[0].clientX;
-        subsidiariesScrollLeft = subsidiariesCarousel.scrollLeft || 0;
     }, { passive: true });
 
-    subsidiariesCarousel.addEventListener("touchmove", (e) => {
-        if (window.innerWidth <= 768) {
-            subsidiariesTouchEndX = e.touches[0].clientX;
-            const diff = subsidiariesTouchStartX - subsidiariesTouchEndX;
+    subsidiariesCarousel.addEventListener("touchend", (e) => {
+        subsidiariesTouchEndX = e.changedTouches[0].clientX;
+        const diff = subsidiariesTouchStartX - subsidiariesTouchEndX;
 
-            // Manual scroll on touch
-            const container = subsidiariesCarousel.parentElement;
-            if (container) {
-                container.scrollLeft = subsidiariesScrollLeft + diff;
+        // Swipe threshold
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                moveSubsidiaries(1); // Swipe left
+            } else {
+                moveSubsidiaries(-1); // Swipe right
             }
         }
     }, { passive: true });
-
-    // Make container scrollable on mobile
-    if (window.innerWidth <= 768) {
-        const container = subsidiariesCarousel.parentElement;
-        if (container) {
-            container.style.overflowX = "auto";
-            container.style.scrollBehavior = "smooth";
-            container.style.webkitOverflowScrolling = "touch";
-        }
-    }
 }
 
 console.log("AZAQ & Brothers - Modern Carousel Loaded");
