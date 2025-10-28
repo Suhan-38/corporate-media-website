@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Zaid Al Quraishi & Brothers Company</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="hero-section">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 50 50">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF6B6B"/>
+                            <stop offset="100%" style="stop-color:#4ECDC4"/>
+                        </linearGradient>
+                    </defs>
+                    <circle cx="25" cy="25" r="22" fill="url(#logoGrad)"/>
+                    <path d="M25 12 L35 28 L25 24 L15 28 Z" fill="white" opacity="0.95"/>
+                </svg>
+                <span class="nav-brand">AZAQ & Brothers</span>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Ali Zaid Al Quraishi<br><span>& Brothers Company</span></h1>
+            <p class="hero-description">Excellence across industries through innovation and expertise</p>
+        </div>
+    </section>
+
+    <div class="main-content">
+        <section class="gallery-section">
+            <div class="section-header">
+                <h2>Premium Events</h2>
+                <p>Showcasing our world-class events and experiences</p>
+            </div>
+
+            <div class="carousel-container">
+                <button class="carousel-nav prev" onclick="moveCarousel(-1)">‹</button>
+                <button class="carousel-nav next" onclick="moveCarousel(1)">›</button>
+
+                <div class="gallery-grid" id="eventsCarousel">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&q=80" alt="Leadership Summit">
+                        <div class="gallery-overlay">
+                            <h3>Global Leadership Summit 2024</h3>
+                            <p>Annual gathering of industry leaders and innovators from around the world</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80" alt="Tech Expo">
+                        <div class="gallery-overlay">
+                            <h3>Tech Innovation Expo</h3>
+                            <p>Showcasing cutting-edge technology and digital solutions</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" alt="Product Launch">
+                        <div class="gallery-overlay">
+                            <h3>Product Launch Gala</h3>
+                            <p>Unveiling latest innovations and breakthrough products</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Executive Retreat">
+                        <div class="gallery-overlay">
+                            <h3>Executive Leadership Retreat</h3>
+                            <p>Strategic planning and team building sessions</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt="Trade Show">
+                        <div class="gallery-overlay">
+                            <h3>International Trade Exhibition</h3>
+                            <p>Connecting global markets and partnerships</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Awards">
+                        <div class="gallery-overlay">
+                            <h3>Excellence Awards Ceremony</h3>
+                            <p>Celebrating outstanding achievements and milestones</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f29da8c2b0?w=800&q=80" alt="Networking">
+                        <div class="gallery-overlay">
+                            <h3>Business Networking Symposium</h3>
+                            <p>Building valuable connections and collaborations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-dots" id="carouselDots"></div>
+        </section>
+
+        <section class="subsidiaries-section">
+            <div class="section-header">
+                <h2>Business Groups</h2>
+                <p>Our diverse portfolio</p>
+            </div>
+        
+        <div class="subsidiaries-container">
+            <div class="subsidiaries-carousel">
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=100&q=80" alt="Relia Events" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Relia Events</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=100&q=80" alt="Nexus Digital" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Nexus Digital</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=100&q=80" alt="Lumina Studios" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Lumina Studios</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=100&q=80" alt="Echo Productions" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Echo Productions</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=100&q=80" alt="Apex Construction" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Apex Construction</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=100&q=80" alt="Global Trade Co" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Global Trade Co</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=100&q=80" alt="Energy Solutions" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Energy Solutions</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=100&q=80" alt="Education Hub" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Education Hub</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <!-- Duplicate for seamless loop -->
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=100&q=80" alt="Relia Events" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Relia Events</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=100&q=80" alt="Nexus Digital" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Nexus Digital</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=100&q=80" alt="Lumina Studios" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Lumina Studios</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=100&q=80" alt="Echo Productions" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Echo Productions</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=100&q=80" alt="Apex Construction" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Apex Construction</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=100&q=80" alt="Global Trade Co" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Global Trade Co</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=100&q=80" alt="Energy Solutions" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Energy Solutions</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+                <a href="https://google.com" class="subsidiary-btn">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=100&q=80" alt="Education Hub" class="card-logo">
+                    <div class="btn-content">
+                        <h3>Education Hub</h3>
+                        <span class="explore-text">Explore More →</span>
+                    </div>
+                </a>
+            </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
