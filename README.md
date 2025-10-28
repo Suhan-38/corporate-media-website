@@ -1,6 +1,6 @@
-# Ali Zaid Al Quraishi & Brothers Company - Website Components
+# Mohamed Suhan & Brothers Company - Website Components
 
-This repository contains the complete website for Ali Zaid Al Quraishi & Brothers Company, split into three independent, standalone projects.
+This repository contains the complete website for Mohamed Suhan & Brothers Company, split into three independent, standalone projects.
 
 ## 📁 Project Structure
 
