@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Events - Ali Zaid Al Quraishi & Brothers Company</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="gallery-section">
+        <div class="section-header">
+            <h2>Premium Events</h2>
+            <p>Showcasing our world-class events and experiences</p>
+        </div>
+
+        <div class="carousel-container">
+            <button class="carousel-nav prev" onclick="moveCarousel(-1)">‹</button>
+            <button class="carousel-nav next" onclick="moveCarousel(1)">›</button>
+
+            <div class="gallery-grid" id="eventsCarousel">
+                <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1400&q=80" alt="Leadership Summit">
+                    <div class="gallery-overlay">
+                        <h3>Global Leadership Summit 2024</h3>
+                        <p>Annual gathering of industry leaders and innovators from around the world</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80" alt="Tech Expo">
+                    <div class="gallery-overlay">
+                        <h3>Tech Innovation Expo</h3>
+                        <p>Showcasing cutting-edge technology and digital solutions</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" alt="Product Launch">
+                    <div class="gallery-overlay">
+                        <h3>Product Launch Gala</h3>
+                        <p>Unveiling latest innovations and breakthrough products</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
+                    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="Executive Retreat">
+                    <div class="gallery-overlay">
+                        <h3>Executive Leadership Retreat</h3>
+                        <p>Strategic planning and team building sessions</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt="Trade Show">
+                    <div class="gallery-overlay">
+                        <h3>International Trade Exhibition</h3>
+                        <p>Connecting global markets and partnerships</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Awards">
+                    <div class="gallery-overlay">
+                        <h3>Excellence Awards Ceremony</h3>
+                        <p>Celebrating outstanding achievements and milestones</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-url="https://templatemo.com/live/templatemo_598_sleeky_pro">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f29da8c2b0?w=800&q=80" alt="Networking">
+                    <div class="gallery-overlay">
+                        <h3>Business Networking Symposium</h3>
+                        <p>Building valuable connections and collaborations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <!-- Full-height popup modal for embedded webpage -->
+    <div id="eventPopup" class="event-popup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeEventPopup()">✕</button>
+            <iframe id="popupIframe" class="popup-iframe" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
