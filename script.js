@@ -164,36 +164,11 @@ galleryItems.forEach(item => {
     item.addEventListener("click", function(e) {
         const url = this.getAttribute("data-url");
 
-        // On mobile: Show overlay first, then open popup on second click
-        if (window.innerWidth <= 768) {
-            const isActive = this.classList.contains("active");
-
-            if (!isActive) {
-                // First click: Show overlay
-                galleryItems.forEach(i => i.classList.remove("active"));
-                this.classList.add("active");
-            } else {
-                // Second click: Open popup
-                if (url) {
-                    openEventPopup(url);
-                }
-            }
-        } else {
-            // Desktop: Open popup directly
-            if (url) {
-                openEventPopup(url);
-            }
+        // Both mobile and desktop: Open popup directly on click
+        if (url) {
+            openEventPopup(url);
         }
     });
-});
-
-// Close overlay when clicking outside
-document.addEventListener("click", function(e) {
-    if (window.innerWidth <= 768) {
-        if (!e.target.closest(".gallery-item") && !e.target.closest(".event-popup")) {
-            galleryItems.forEach(i => i.classList.remove("active"));
-        }
-    }
 });
 
 // Observe subsidiary buttons

@@ -517,37 +517,9 @@ body {
         display: none;
     }
 
-    /* Fix text overflow on mobile */
+    /* Hide overlay on mobile - direct popup on tap */
     .gallery-overlay {
-        padding: 0.8rem;
-        opacity: 0; /* Hidden by default */
-        overflow: visible;
-    }
-
-    .gallery-item.active .gallery-overlay {
-        opacity: 1; /* Show when active/clicked */
-    }
-
-    .gallery-overlay h3 {
-        font-size: 0.85rem;
-        margin-bottom: 0.25rem;
-        overflow: visible;
-        text-overflow: clip;
-        display: block;
-        line-height: 1.3;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-    }
-
-    .gallery-overlay p {
-        font-size: 0.7rem;
-        line-height: 1.3;
-        overflow: visible;
-        text-overflow: clip;
-        display: block;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+        display: none;
     }
 
     .section-header h2 {
